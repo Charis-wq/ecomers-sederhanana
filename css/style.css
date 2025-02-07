@@ -21,10 +21,11 @@ body{
     
 
 }
+/*navigation bar*/
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color:  rgba(214, 39, 39, 0.7);
+    background-color:  var(--primary);
     align-items: center;
     padding: 1.2rem 8%;
     border-bottom: 1px solid  #f0f1fa ;
@@ -77,6 +78,18 @@ body{
     display: none;
 }
 
+/*hero section*/
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/bg\ 1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+   background-clip: inherit;
+}
+
 /* media queries*/
 /*laptop*/
 @media (max-width: 1366px) {
@@ -101,12 +114,28 @@ body{
         right: -100%;
         height: 100vh;
         width: 30rem;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
     }
     
     .navbar .nav-bar.active{
         right: 0;
     }
+
+    .navbar .nav-bar a{
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    .navbar .nav-bar a::after{
+        transform-origin: 0 0;
+    }
+    .navbar .nav-bar a:hover:after{
+        transform: scaleX(0.2);
+    }
+
+  
 
 
 }
