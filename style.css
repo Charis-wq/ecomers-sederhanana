@@ -1,0 +1,118 @@
+:root{
+    --primary: #d62727;
+    --bg:#f4fffc;
+    --secondry: #FBA518; 
+    --thirdy: #A89C29;
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: none;
+    outline: none;
+    text-decoration: none;
+    
+}
+
+body{
+    font-family: 'Poppin' sans-serif;
+    background-color: var(--bg);
+    color: black;
+    
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color:  rgba(214, 39, 39, 0.7);
+    align-items: center;
+    padding: 1.2rem 8%;
+    border-bottom: 1px solid  #f0f1fa ;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+}
+.navbar .nav-logo{
+   font-weight: 700;
+   font-size: 3rem;
+   color: var(--bg);
+   font-style: italic;
+   padding: 0 1.5rem;
+
+}
+.navbar .nav-logo span{
+    color: var(--secondry);
+}
+.navbar .nav-bar a{
+    color: var(--bg);
+    font-size: 1.4rem;
+    margin: 0 1rem;
+    display: inline-block;
+}
+.navbar .nav-bar a:hover{
+    color: var(--secondry);
+}
+.navbar .nav-bar a::after{
+    content: '';
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--secondry);
+    display: block;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+.navbar .nav-bar a:hover::after{
+    transform: scaleX(0.5);
+}
+.navbar .nav-icon a{
+    color: var(--bg);
+    margin: 0 0.5rem;
+   
+}
+.navbar .nav-icon a:hover{
+    color: var(--secondry);
+}
+#menu{
+    display: none;
+}
+
+/* media queries*/
+/*laptop*/
+@media (max-width: 1366px) {
+    html{
+        font-size: 75%;
+    }
+}
+/*tablet*/
+@media (max-width: 768px) {
+    html{
+        font-size: 62.5%;
+    }
+
+    #menu{
+    
+        display: inline-block;
+    }
+
+    .navbar .nav-bar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        height: 100vh;
+        width: 30rem;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .navbar .nav-bar.active{
+        right: 0;
+    }
+
+
+}
+/*mobile*/
+@media (max-width: 450px) {
+    html{
+        font-size: 55%;
+    }
+}
