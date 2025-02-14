@@ -25,24 +25,160 @@
       </div>
       <div class="nav-icon">
         <!-- icon-->
-        <a href="#" id="search"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-        <a href="#" id="menu"><i data-feather="menu"></i></a>
-        
+        <a href="#product" id="search"><i data-feather="search"></i></a>
+        <a id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a id="menu"><i data-feather="menu"></i></a>
       </div>
-
+      <!-- Search Bar -->
+     <div class="search-container">
+       <div class="search">
+        <input type="search" id="searchInput" placeholder="Search product...">
+        <label for="search-box"></label>
+       </div>
+     </div>
+     <!-- Keranjang Belanja -->
+        <div class="cart-container">
+          <h2>Shopping Cart</h2>
+          <ul id="cart-items">
+            <!--li cart product list-->
+          </ul>
+          <p>Total: $<span id="total-price">0.00</span></p>
+        </div>
   </nav>
    <!-- hero content -->
     <section class="hero" id="home">
       <main class="content">
-        <h1>Your Product<span>Tagline</span></h1>
+        <h1>Your Product <span>Tagline</span></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quo?</p>
         <a href="#" class="cta">Buy Now</a>
       </main>
     </section>
-   
+    <!--about section-->
+    <section class="about" id="about">
+      <h2>ABOUT<span>US</span></h2>
+      <div class="row">
+        <div class="row-img">
+          <img src="../ecomers-sederhanana/image/about.jpg" alt="about">
+        </div>
+        <div class="content">
+          <h3>WHY<span>US</span></h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus asperiores cumque cupiditate corrupti tenetur aliquid eum architecto laudantium, aperiam nihil error tempore hic esse? Eum facere quos nesciunt nobis. Veritatis?</p>
+        </div>
+        </div>
+    </section>
+
+    <!--product section-->
+    <section  id="product" class="product">
+
+      <h2>PRODU<span>CT</span></h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis earum illum laboriosam minus quas nemo incidunt magnam beatae reprehenderit eos!</p>
+
+      <div class="row" id="productList">
+
+        <div class="catalog-card" data-name="Tshirt"data-price="15.00">
+          <img src="image/product-img.jpg" alt="Tshirt">
+          <h3 class="card-tittle">Tshirt</h3>
+          <p class="card-price">$15.00</p>
+          <a id="viewBTn" href="" data-name="Tshirt"> <i data-feather="eye"></i></a>
+          <a  class="add-cart-btn" href=""> <i data-feather="shopping-cart"></i></a>
+        </div>
         
- 
+        <div class="catalog-card" data-name="Pants" data-price="10.00">
+          <img src="image/product-img.jpg" alt="Pants">
+          <h3 class="card-tittle">Pants</h3>
+          <p class="card-price">$10.00</p>
+          <a id="viewBTn" href="" data-name="Pants"><i data-feather="eye"></i></a>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+       </div>
+    
+        <div class="catalog-card" data-name="Jeans" data-price="35.00">
+          <img src="image/product-img.jpg" alt="Jeans">
+          <h3 class="card-tittle">Jeans</h3>
+          <p class="card-price">$35.00</p>
+          <a id="viewBTn" href="" date-name="Jeans"><i data-feather="eye"></i></a>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+        </div>
+
+        <div class="catalog-card" data-name="Hoodie" data-price="30.00">
+          <img src="image/product-img.jpg" alt="Hoodie">
+          <h3 class="card-tittle">Hoodie</h3>
+          <p class="card-price">$30.00</p>
+          <a id="viewBTn" href="" data-name="Hoodie"><i data-feather="eye"></i></a>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+        </div>
+
+        <div class="catalog-card" data-name="Shirt" data-price="20.00">
+          <img src="image/product-img.jpg" alt="Shirt">
+          <h3 class="card-tittle">Shirt</h3>
+          <p class="card-price">$20.00</p>
+          <a id="viewBTn" href="" date-name="Shirt"><i data-feather="eye"></i></a>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+        </div>
+
+        <div class="catalog-card" data-name="Jacket" data-price="45.00">
+          <img src="image/product-img.jpg" alt="Jacket">
+          <h3 class="card-tittle">Jacket</h3>
+          <p class="card-price">$45.00</p>
+          <a id="viewBTn" href="" id="viewBtn" data-name="Jacket"><i data-feather="eye"></i></a>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+        </div>
+     </div>
+ <!--product view detail-->
+     <div id="productModal" class="modal">
+       <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="modalImage" src="" alt="ProductImage">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <p id="modalPrice"></p>
+          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+        </div>
+      </div>
+    </section>
+    <!--contact section-->
+    <section class="contact" id="contact">
+      <h2>CONTACT<span>US</span></h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda velit voluptas ullam neque explicabo commodi quasi reiciendis consequuntur! Placeat sit dolorum eius ipsam minus, quidem corrupti repudiandae nesciunt repellendus. Necessitatibus.</p>
+
+      <div class="row">
+        <div class="input-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126715.8430507373!2d110.33466212458933!3d-7.024552223082901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4d3f0d024d%3A0x1e0432b9da5cb9f2!2sKota%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1739106583537!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        </div>
+      <form>
+        <div class="input-contact">
+          <a href="" id="mail"><i data-feather="mail"></i>: your email address</a>
+        </div>
+        <div class="input-contact">
+          <a href="" id="phone"><i data-feather="phone"></i>: your number phone</a>
+
+        </div>
+        <div class="input-contact">
+          <a href="" id="instagram"><i data-feather="instagram"></i>: your instagram account</a>
+          
+        </div>
+        <div class="input-contact">
+          <a href="" id="facebook"><i data-feather="facebook"></i>: your facebook account</a>
+
+        </div>
+         
+      </form>
+      </div>
+
+    </section> 
+    <!--footer-->
+    <footer class="footer">
+      <div class="links">
+        <a href="#home">HOME</a>||
+        <a href="#about">ABOUT</a>||
+        <a href="#product">PRODUCT</a>||
+        <a href="#contact">CONTACT</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="">Abdul Charis</a>.| &copy; 2025</p>
+      </div>
+    </footer>
     <script>
         feather.replace();
       </script>
