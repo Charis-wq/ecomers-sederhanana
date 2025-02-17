@@ -155,6 +155,7 @@ body {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  border: 1px solid wheat ;
 }
 .navbar .cart-container button {
   background-color: transparent;
@@ -217,6 +218,7 @@ body {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     display: inline-block;
 }
+
 /*about section*/
 .about{
     padding: 8rem 7% 1.4rem;
