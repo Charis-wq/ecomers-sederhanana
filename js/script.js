@@ -4,6 +4,7 @@ const navBar = document.querySelector(".nav-bar");
 
 menuButton.onclick = ()=> {
     navBar.classList.toggle('active')
+    cartContainer.classList.remove('active')
 }
 
 document.addEventListener('click', (e) =>{
@@ -18,7 +19,9 @@ const searchInput = document.getElementById("searchInput");
 const searchContainer = document.querySelector('.search-container')
 const search = document.getElementById('search')
 search.onclick = () => {
-    search = searchContainer.classList.toggle('active')}
+    searchContainer.classList.toggle('active')
+    cartContainer.classList.remove('active')
+}
 
 document.addEventListener('click', (e) => {
     if(!search.contains(e.target) && !searchContainer.contains(e.target)){
@@ -48,15 +51,10 @@ const cartBtn = document.getElementById('shopping-cart');
 const cartContainer = document.querySelector('.cart-container');
 
 cartBtn.onclick = () =>{
-cartContainer.classList.toggle('active');
+cartContainer.classList.toggle('active')
 }
 
-document.addEventListener('click', (e) => {
-if(!cartBtn.contains(e.target) && !cartContainer.contains(e.target)){
-    cartContainer.classList.remove('active')
 
-}
-});
 
 // **Fitur Lihat Detail Produk**
 
@@ -99,6 +97,70 @@ window.addEventListener("click", function (event) {
 
 initializeEventListeners();
 
+//function to add cart
+   
+const cartItems = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+    const modalAddToCartBtn = document.getElementById("modalbtn");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCart() {
+        cartItems.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price * item.quantity;
+            const li = document.createElement("li");
+            li.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:50px; height:50px; margin-right:10px;"> 
+                            ${item.name} $${item.price.toFixed(2)} x ${item.quantity} 
+                            <button class="remove-item" data-index="${index}">X</button>`;
+            cartItems.appendChild(li);
+        });
+        totalPriceElement.textContent = total.toFixed(2);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        attachRemoveEvent();
+    }
+
+    function attachRemoveEvent() {
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function () {
+                const index = this.getAttribute("data-index");
+                cart.splice(index, 1);
+                updateCart();
+            });
+        });
+    }
+
+    function addToCart(name, price, image) {
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name, price, image, quantity: 1 });
+        }
+        updateCart();
+    }
+
+    document.querySelectorAll(".add-cart-btn").forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            const productCard = this.closest(".catalog-card");
+            const name = productCard.getAttribute("data-name");
+            const price = parseFloat(productCard.getAttribute("data-price"));
+            const image = productCard.querySelector("img").src;
+            addToCart(name, price, image);
+            cartContainer.classList.toggle('active')
+        });
+    });
+
+    modalAddToCartBtn.addEventListener("click", function () {
+        const modalTitle = document.getElementById("modalTitle").textContent;
+        const modalPrice = parseFloat(document.getElementById("modalPrice").textContent.replace("Price: $", ""));
+        const modalImage = document.getElementById("modalImage").src;
+        addToCart(modalTitle, modalPrice, modalImage);
+        cartContainer.classList.toggle('active')
+    });
+
+    updateCart();
 
 
 

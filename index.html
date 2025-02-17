@@ -43,6 +43,7 @@
             <!--li cart product list-->
           </ul>
           <p>Total: $<span id="total-price">0.00</span></p>
+          <button class="buy-now">Buy Now</button>
         </div>
   </nav>
    <!-- hero content -->
@@ -128,11 +129,13 @@
      <div id="productModal" class="modal">
        <div class="modal-content">
           <span class="close">&times;</span>
-          <img id="modalImage" src="" alt="ProductImage">
-          <h2 id="modalTitle"></h2>
-          <p id="modalDescription"></p>
-          <p id="modalPrice"></p>
-          <a class="add-cart-btn" href=""><i data-feather="shopping-cart"></i></a>
+          <div class="modal-paragraf">
+            <img id="modalImage" src="" alt="ProductImage">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button id="modalbtn">🛒</button>
+          </div>
         </div>
       </div>
     </section>
